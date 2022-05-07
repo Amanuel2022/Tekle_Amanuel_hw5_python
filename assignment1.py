@@ -19,30 +19,43 @@ Use comments to explain:
 
 # Print to console
 from array import array
+from audioop import reverse
+from dataclasses import dataclass
+from http.client import _DataType
 from operator import le
 
 
 print("This is my first print statement")
 
 '''
-In statically typed languages, you must declare the kind of data a variable represents when you define it. Python is a dynamically typed language, meaning you don’t have to declare the kind of data a variable will represent. In Python, the interpreter examines the data associated with the vari-able throughout the life of the program and manages type issues for you.
+In statically typed languages, you must declare the kind of data a variable represents when you define it. 
+Python is a dynamically typed language, meaning you don’t have to declare the kind of data a variable will represent. 
+In Python, the interpreter examines the data associated with the vari-able throughout the life of the program and manages 
+type issues for you.
 '''
 
 '''
-In Python, a variable is a name attached to a piece of data. You first define a variable, then use that name when you refer to that piece of data.
+In Python, a variable is a name attached to a piece of data. You first define a variable, then use that name when you 
+refer to that piece of data.
 '''
 
 # Initialize two string variables
-first_name = "John"
-last_name = "Doe"
+my_age = 28
+first_name = "Amanuel"
+last_name = "Tekle"
+
 
 '''
-A string is a value made up of text and is one of the simplest data types in any language. Much of the information that’s passed within and between programs is strings.
-Strings are treated as a collection of characters, so the string "123" is different from the numerical value 123. A substring is part of a string.
+A string is a value made up of text and is one of the simplest data types in any language. Much of the information 
+that’s passed within and between programs is strings.
+Strings are treated as a collection of characters, so the string "123" is different from the numerical value 123. 
+A substring is part of a string.
 You can perform many actions with strings:
 • Joining strings together, known as concatenation
-• Inserting the value of a variable into a string, known as interpolation• Changing a string’s case
-• Stripping extra whitespace from a string• Searching for a substring within a string
+• Inserting the value of a variable into a string, known as interpolation
+• Changing a string’s case
+• Stripping extra whitespace from a string
+• Searching for a substring within a string
 • Replacing some characters in a string
 In Python, strings are enclosed using single or double quotes.
 '''
@@ -59,20 +72,36 @@ print("Hi, my name is " + " ".join([first_name, last_name]))
 # using format() to concatenate
 print("Hi, my name is {} {}".format(first_name, last_name))
 
-#TODO: Try introducing yourself and add your age as well. On top of first_name & last_name variable add another variable called my_age and set it to a number. 
-# Then try concatenating it using the above four strategies.  
 
+#TODO: Try introducing yourself and add your age as well. On top of first_name & last_name variable add another variable 
+# called my_age and set it to a number. 
+# Then try concatenating it using the above four strategies. 
+ 
+print('------------------------------------------------------------------------------------\n')
 
-print("-------------------------------------------------------------------------------\n")
+# The plus operator can only concat str so had to change age to str in print
+print("Hi, my name is " + first_name + " " + last_name + " and I am" + " " + str(my_age) + " " + "years old")
+
+# using % operator
+print("Hi, my name is %s %s and I am %s years old" % (first_name, last_name, my_age) )
+
+# using join () this one took me a few tries to figure out I can just add another .join() 
+print("Hi, my name is " + " ".join([first_name, last_name]) + " " + "and I am " + " " .join([ str(my_age)]) +" " + "years old")
+
+# using format() 
+print("Hi, my name is {} {} and I am {} years old".format(first_name, last_name, my_age))
 
 '''
-Integers and floats are the two main kinds of numerical data types. An integer, or int, is a number with no decimal part. A float is a number with a decimal part.
+Integers and floats are the two main kinds of numerical data types. An integer, or int, is a number with no decimal part. A float 
+# is a number with a decimal part.
 '''
 
 '''
-You can perform all basic arithmetic operations with numerical data and do higher-order operations, such as working with exponents, finding absolute values, and work-ing with trigonometric functions.
+You can perform all basic arithmetic operations with numerical data and do higher-order operations, such as working with exponents, 
+finding absolute values, and work-ing with trigonometric functions.
 Python allows you to represent complex numbers (numbers with real and imaginary parts) and work with fractions.
-For computation-intensive work, third-party libraries, such as NumPy, SciPy, and pandas, can make your work easier. Many dedicated visualization libraries are available as well, such as Matplotlib, Bokeh, Pygal, and Plotly.
+For computation-intensive work, third-party libraries, such as NumPy, SciPy, and pandas, can make your work easier. Many dedicated visualization 
+libraries are available as well, such as Matplotlib, Bokeh, Pygal, and Plotly.
 '''
 
 # Initialize variables of different data types
@@ -83,8 +112,11 @@ simple_boolean = True #A Boolean value represents either true or false. In Pytho
 short_array    = [1, 2, 3, 4]
 
 '''
-You can use the elif, or else if, statement to make your program respond to multiple conditions. This code structure means “if one condition applies, do this; else if a different condition applies, do something different.” You can chain together as many of these specific conditions as you need.
-An else block runs a particular block of code when all other conditions don’t apply. An else block must always be the last block in an if-elif-else chain.
+You can use the elif, or else if, statement to make your program respond to multiple conditions. This code structure means 
+“if one condition applies, do this; else if a different condition applies, do something different.” You can chain together 
+as many of these specific conditions as you need.
+An else block runs a particular block of code when all other conditions don’t apply. An else block must always be the last 
+block in an if-elif-else chain.
 '''
 # Branching Logic
 if(simple_decimal < 5.0):
@@ -95,7 +127,8 @@ else:
     print("Big decimal") 
 
 '''
-A sequence is a data structure that stores a collection of items in a specific order. In some languages, a sequence can only contain items of one type; in other languages, including Python, a sequence can have items of different types.
+A sequence is a data structure that stores a collection of items in a specific order. In some languages, a sequence can 
+only contain items of one type; in other languages, including Python, a sequence can have items of different types.
 '''
 print('--------- printing array from the first index -----------------\n')
 
@@ -106,7 +139,8 @@ for num in short_array:
 print("------- printing array from the last index -----------\n")
 
 '''
-A loop is a block of code that runs multiple times. Use loops when you need to repeat actions more than once, depending on certain criteria. The two loop types are the for loop and the while loop.
+A loop is a block of code that runs multiple times. Use loops when you need to repeat actions more than once, 
+depending on certain criteria. The two loop types are the for loop and the while loop.
 '''
 # loop through an array from the last index
 for index in range(len(short_array) - 1, -1, -1):
@@ -115,7 +149,9 @@ for index in range(len(short_array) - 1, -1, -1):
 print("----- Print Odd Numbers ---------------------\n")
 
 '''
-A for loop repeats as many times as you specify or once for each item in a sequence. For example, you can write a for loop that runs 100 times to repeat an action 100 times. You can also write a for loop that runs once for each item in a collection of items.
+A for loop repeats as many times as you specify or once for each item in a sequence. For example, 
+you can write a for loop that runs 100 times to repeat an action 100 times. 
+You can also write a for loop that runs once for each item in a collection of items.
 '''
 # for loops print odd numbers from 1 - 10;
 for num in range(10):
@@ -131,7 +167,10 @@ for num in range(10):
 print("----------- While Loop -------------------\n")
 
 '''
-A while loop runs as long as a certain condition is true. Say you have a game loop that runs as long as a game_active variable is set to True. You can then put mul-tiple situations inside the loop that cause game_active to become False and end the game. You can also use a while loop to process items in a collection that might have new items added to it as the loop is running. As long as items are in the collection, you can keep working with it. When the collection is empty, the loop stops running.
+A while loop runs as long as a certain condition is true. Say you have a game loop that runs as long as a game_active variable is set to True. 
+You can then put mul-tiple situations inside the loop that cause game_active to become False and end the game. 
+You can also use a while loop to process items in a collection that might have new items added to it as the loop is running. 
+As long as items are in the collection, you can keep working with it. When the collection is empty, the loop stops running.
 '''
 # While Loop
 while_loop_index = 1
@@ -140,24 +179,42 @@ while while_loop_index < 10:
     while_loop_index += 1;    
 
 '''
-A nested loop is a loop inside another loop. Say you need a loop that examines every pixel in an image. You could write a loop that looks at each pixel in a row and, inside that loop, add a second loop that looks at every pixel in the current column for that row.
+A nested loop is a loop inside another loop. Say you need a loop that examines every pixel in an image. 
+You could write a loop that looks at each pixel in a row and, inside that loop, add a second loop that looks 
+at every pixel in the current column for that row.
 '''
 #TODO: write a for loop to ONLY print even numbers
+for num in range(10):
+    if(num % 2 == 0):
+        print(num)
 
-
+print("=========================================================================\n")
 
 #TODO: Declare an Array with mixed data types. i.e. string, number, boolean, etc. 
 # Iterate through this list using for loop and see the output. 
 
+random_array = ["one",2,3,4,False,5.4,6789]
 
+for x in random_array:
+    print(x)
 
 #TODO: Print the data type for each array item. 
 
-
+# for x in random_array:
+#    print(type(x))
 
 # TODO: Reverse a String: input = hello, output = olleh
+# use slice and step backwards
 
+x = "hello"
+reversestr= x[::-1]
 
+print(reversestr)
+
+i = str(1234)
+revnum = i[::-1]
+
+print(int(revnum))
 
 # TODO: Reverse a number: input = 1234, output = 4321
 
@@ -174,7 +231,7 @@ With a sequence, you can do the following:
 • Work with items that match certain conditions.
 In Python, the main sequence type is the list. Lists are mutable, meaning you can modify them after creating them. Tuples are immutable sequences, meaning they can’t be changed after they’re defined. Strings are a special type of sequence: each element in the sequence is a character.
 '''
-print("------- List --------------")
+print("------- List -----------------------")
 my_list = ["apple", "banana", "cherry", "mango", "pineapple", "watermelon"]
 
 # print the first item of a list
