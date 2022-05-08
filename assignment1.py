@@ -19,10 +19,9 @@ Use comments to explain:
 
 # Print to console
 from array import array
-from audioop import reverse
-from dataclasses import dataclass
-from http.client import _DataType
 from operator import le
+
+
 
 
 print("This is my first print statement")
@@ -91,6 +90,9 @@ print("Hi, my name is " + " ".join([first_name, last_name]) + " " + "and I am " 
 # using format() 
 print("Hi, my name is {} {} and I am {} years old".format(first_name, last_name, my_age))
 
+# f string latest print method
+print(f'Hi, my name is {first_name} {last_name} and I am {my_age} years old')
+
 '''
 Integers and floats are the two main kinds of numerical data types. An integer, or int, is a number with no decimal part. A float 
 # is a number with a decimal part.
@@ -124,7 +126,7 @@ if(simple_decimal < 5.0):
 elif(simple_decimal < 9.0):
     print("Mid size decimal")
 else:
-    print("Big decimal") 
+    print("Big decimal")  
 
 '''
 A sequence is a data structure that stores a collection of items in a specific order. In some languages, a sequence can 
@@ -200,28 +202,36 @@ for x in random_array:
 
 #TODO: Print the data type for each array item. 
 
-# for x in random_array:
-#    print(type(x))
+for x in random_array:
+    print(type(x))
 
 # TODO: Reverse a String: input = hello, output = olleh
-# use slice and step backwards
 
-x = "hello"
-reversestr= x[::-1]
 
-print(reversestr)
+x = 'hello'
+print(x[::-1])
 
-i = str(1234)
-revnum = i[::-1]
+# for loop that reverses input
+rev = ''
+for i in x:
+    rev= i + rev
+print(rev)
 
-print(int(revnum))
+
 
 # TODO: Reverse a number: input = 1234, output = 4321
+# wasnt sure if we were suppose to reverse an int but I learned that an input() is always a string in python so 1234 would be '1234' but just incase I changed it into int in the print
 
+x = '1234'
+rev = ''
+for i in x:
+    rev= i + rev
+print(int(rev))
 
 
 '''
-Sequences are important when you need to store items in a specific order. For example, a list of website users might be ordered according to when each user registered.
+Sequences are important when you need to store items in a specific order. For example, a list of website users might be ordered according 
+to when each user registered.
 With a sequence, you can do the following:
 • Add and remove items
 • Work with individual items or groups of items
@@ -229,7 +239,9 @@ With a sequence, you can do the following:
 • Look for duplicate or unique items
 • Loop through the sequence and do something with each item
 • Work with items that match certain conditions.
-In Python, the main sequence type is the list. Lists are mutable, meaning you can modify them after creating them. Tuples are immutable sequences, meaning they can’t be changed after they’re defined. Strings are a special type of sequence: each element in the sequence is a character.
+In Python, the main sequence type is the list. Lists are mutable, meaning you can modify them after creating them. Tuples are immutable 
+sequences, meaning they can’t be changed after they’re defined. Strings are a special type of sequence: each element in the sequence is 
+a character.
 '''
 print("------- List -----------------------")
 my_list = ["apple", "banana", "cherry", "mango", "pineapple", "watermelon"]
@@ -277,6 +289,13 @@ for index, fruit in enumerate(my_list):
 #TODO: Using a for loop update every item in the my_list list into dessert items
 # dessert = ["apple cake", "banana cake", "donut", "fudge", "ice cream", "jilapi"]
 
+dessert = ["apple cake", "banana cake", "donut", "fudge", "ice cream", "jilapi"]
+
+for i in dessert:
+  my_list[:] = dessert
+print(my_list)
+
+
 
 
 print("-------------------- Dictionary ---------------------------------\n")
@@ -295,7 +314,8 @@ country_capital_dict["Germany"] = "Berlin"
 print("\nDictionary with new item added:\n%s" % country_capital_dict)
 
 # Removing items from an existing dictionary 
-#NOTE: dict.pop() is preferable method of removing an item from a dictionary. Also, del can delete an entire dictionary when you don't specify key to delete. 
+#NOTE: dict.pop() is preferable method of removing an item from a dictionary. 
+# Also, del can delete an entire dictionary when you don't specify key to delete. 
 del country_capital_dict["Germany"]
 country_capital_dict.pop("France")
 print("\nDictionary after deletion:\n%s" % country_capital_dict)
@@ -317,3 +337,19 @@ for key, value in country_capital_dict.items():
 #TODO: Create 5 lists of real life items and create 5 dictionaries. For example, 
 # for list, I would create a list for list of chores I need to do on weekends. i.e chores = ['laundry', 'pick-up mail', 'clean the apt']
 # for dictionary, I would have friends to phone number. friends = {'jose': '718-233-6464', 'ali': '646-232-2323'}
+
+weekend_chores = ['laundry', 'grocery', 'hw','clean room']
+fav_drinks = ['water', 'coffee','tea','beer']
+friends = ['Nate','Jojo','Jazz','Blake','Morgan']
+siblings = ['Fasil','Helena','Mickey']
+sports = ['basketball','soccer','football','hockey','baseball','tennis']
+
+fav_drinks_dict = {'water': 'fiji', 'coffee': 'home made', 'tea': 'Ethiopian blend', 'beer': 'lush IPA'}
+friends_num_dict = {'Nate':'2068983443', 'Jojo':'4244437653','Jazz':'2067781001','Blake':'9078993232','Morgan':'2068982321'}
+siblings_dict = {'oldest':'Fasil','second oldest':'Helena','youngest':'Mickey'}
+weekday_schu_dict = {'seven':'lecture', 'nine':'code and learn', 'ten':'lunch', 'eleven':'code and learn', 'twelve':'agile', 'one':'lean coffee'}
+
+
+print(fav_drinks_dict.get('tea'))
+
+print(weekday_schu_dict.get('one'))
