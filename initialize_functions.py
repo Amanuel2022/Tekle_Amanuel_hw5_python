@@ -14,7 +14,6 @@ def introduction(first_name, last_name):
     print("Hi, my name is %s %s. Nice to meet you!\n" % (first_name, last_name))
 
 
-
 # functions with default arguments/parameters
 def introduction_with_default_args(first_name = "John", last_name = "Doe"):
     print("Hi, my name is %s %s. Nice to meet you!\n" % (first_name, last_name))
@@ -27,7 +26,6 @@ def introduction_with_mix_of_default_args(first_name, last_name = "Doe"):
 # function that returns value(s)
 def product_of_two_num(num1, num2):
     return num1 * num2
-print(product_of_two_num(10,2))
 
 # function with arbitrary arguments
 # User of this function will pass in N number of real numbers, which will be converted into a tuple.
@@ -39,7 +37,7 @@ def add_all_nums(*nums):
         sums += num
     return sums
 
-double = lambda x: x * 2
+double2 = lambda x: x * 2
 # Equivalant function
 def double(x):
    return x * 2
