@@ -16,3 +16,4 @@ ar.print_self()
 
 #TODO: create several more instance of the Arithmetic class and add different values
 
+print(60+(10**2)/4*7)

@@ -1,5 +1,4 @@
 import imp
-
 from initialize_functions import *
 
 '''
@@ -31,8 +30,20 @@ print("Invoking function with required arguments ")
 print(add_all_nums(5,6,74,5,4))
 
 print("Invoking a lambda function")
-print(double2(22))
+# print(Double('22'))
 
 print("Invoking a function with required arguments that doubles given num")
 print(double(99))
+
+print("Invoking a function with one required argument")
+print(fib(13.3))
+
+print("Invoking a function with two required arguments")
+print(subtract(300.5,100))
+
+print('Invoking a function with one required argument')
+print(palindromecheck('Saippuakivikauppias'))
+
+
+
 

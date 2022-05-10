@@ -37,7 +37,7 @@ def add_all_nums(*nums):
         sums += num
     return sums
 
-double2 = lambda x: x * 2
+double = lambda x: x * 2
 # Equivalant function
 def double(x):
    return x * 2
@@ -80,7 +80,7 @@ print("------------ End of Function Initialization ---------------------\n\n")
 
 
 
-def ispalindrome(string):
+def palindromecheck(string):
   if string.lower() == string.lower()[::-1]:
     return True
   else:
@@ -93,10 +93,10 @@ def ispalindrome(string):
 Boolean values can represent the state of a program or a certain condition. For example, you can use variables such as game_active, can_edit, and polling_open, which take either a True or False value. When these values are True, certain code sections are enabled as the program runs.
 '''
 # sample input1: bob
-print(ispalindrome('Bob'))
+print(palindromecheck('Bob'))
 # sample output1: true
 
 # sample input2: Jose
-print(ispalindrome('Jose'))
+print(palindromecheck('Jose'))
 # sample output2: false
 

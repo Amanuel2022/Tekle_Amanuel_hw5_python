@@ -347,9 +347,11 @@ sports = ['basketball','soccer','football','hockey','baseball','tennis']
 fav_drinks_dict = {'water': 'fiji', 'coffee': 'home made', 'tea': 'Ethiopian blend', 'beer': 'lush IPA'}
 friends_num_dict = {'Nate':'2068983443', 'Jojo':'4244437653','Jazz':'2067781001','Blake':'9078993232','Morgan':'2068982321'}
 siblings_dict = {'oldest':'Fasil','second oldest':'Helena','youngest':'Mickey'}
-weekday_schu_dict = {'seven':'lecture', 'nine':'code and learn', 'ten':'lunch', 'eleven':'code and learn', 'twelve':'agile', 'one':'lean coffee'}
-
+bootcampschudle_dict = {'seven':'lecture', 'nine':'code and learn', 'ten':'lunch', 'eleven':'code and learn', 'twelve':'agile', 'one':'lean coffee'}
+mycardict = {"brand": "Chevy", "model": "Silverado", "year": "2014", "color": ['black','silver']}
 
 print(fav_drinks_dict.get('tea'))
 
-print(weekday_schu_dict.get('one'))
+print(bootcampschudle_dict.get('nine'))
+
+print(bootcampschudle_dict.values())
