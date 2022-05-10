@@ -16,4 +16,19 @@ ar.print_self()
 
 #TODO: create several more instance of the Arithmetic class and add different values
 
-print(60+(10**2)/4*7)
+print("First attempt at running class")
+br = Arithmetic(3,19)
+print(br.add())
+print(br.divide())
+print(br.remainder())
+br.print_self()
+
+print("second attempt")
+cr = Arithmetic(8,6)
+print(cr.add())
+print(cr.divide())
+print(cr.remainder())
+print(cr.multiply())
+print(cr.subtract())
+print(cr.remainder())
+cr.print_self()
